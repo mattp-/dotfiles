@@ -1,0 +1,15 @@
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+defscrollback 100000
+shell bash
+startup_message off
+autodetach on
+
+#default windows
+#screen -t rw 0
+#screen -t rw_perl_log 1
+#screen -t rw_error_log 2
+#screen -t mysql 3
+#screen -t remote_access 4
+#screen -t misc 5
+#screen -t achilles 6

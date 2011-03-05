@@ -1,0 +1,117 @@
+" default .vimrc installed by vim-update-bundles.
+" Avoid abbreviations!  Spelling everything out makes grepping easy.
+
+" Load plugins using Pathogen. Don't worry if this bit doesn't make sense.
+call pathogen#runtime_append_all_bundles()
+
+" Remove any text (like the '#') before BUNDLE to enable a plugin.
+
+" Generally Useful:
+" Bundle: git://github.com/scrooloose/nerdtree.git
+" Bundle: git://github.com/vim-scripts/bufexplorer.zip.git
+" # Bundle: git://github.com/bronson/vim-closebuffer.git
+" Bundle: git://github.com/vim-scripts/IndexedSearch.git
+" Bundle: git://github.com/bronson/vim-trailing-whitespace.git
+" # Bundle: git://github.com/Raimondi/YAIFA.git
+" Bundle: git://github.com/tpope/vim-vividchalk.git
+"
+" Bundle: git://git.wincent.com/command-t.git
+" #   If rvm is installed, make sure we compile command-t with the system ruby
+" Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
+
+" Programming:
+" # Bundle: git://github.com/scrooloose/nerdcommenter.git
+" Bundle: git://github.com/tpope/vim-surround.git
+" Bundle: git://github.com/vim-scripts/taglist.vim
+" # Bundle: git://github.com/msanders/snipmate.vim.git
+" # Bundle: git://github.com/scrooloose/snipmate-snippets.git
+" Bundle: git://github.com/vim-scripts/Align.git
+" # Bundle: git://github.com/tpope/vim-endwise.git
+" Bundle: git://github.com/tpope/vim-repeat.git
+" Bundle: git://github.com/tpope/vim-fugitive.git
+" Bundle: git://github.com/ervandew/supertab.git
+" Bundle: git://github.com/vim-scripts/jQuery.git
+" Bundle: git://github.com/tpope/vim-git.git
+" # Bundle: git://github.com/tpope/vim-markdown.git
+" # Bundle: git://github.com/timcharper/textile.vim.git
+" # Bundle: git://github.com/kchmck/vim-coffee-script.git
+
+" Ruby/Rails Programming:
+" # Bundle: git://github.com/vim-ruby/vim-ruby.git
+" # Bundle: git://github.com/tpope/vim-rails.git
+" # Bundle: git://github.com/tpope/vim-rake.git
+" # Bundle: git://github.com/janx/vim-rubytest.git
+" # Bundle: git://github.com/tsaleh/vim-shoulda.git
+" # Bundle: git://github.com/tpope/vim-cucumber.git
+" # Bundle: git://github.com/tpope/vim-haml.git
+" # Bundle: git://github.com/astashov/vim-ruby-debugger.git
+
+" Custom
+" Bundle: git://github.com/vim-scripts/Zenburn.git
+" Bundle: git://github.com/vim-scripts/perl-support.vim.git
+" Bundle: git://github.com/vim-scripts/LustyExplorer.git
+" Bundle: git://github.com/vim-scripts/LustyJuggler.git
+
+" Config
+syntax on
+filetype plugin on
+set vb
+set incsearch
+set showmatch
+
+" tabs
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set smarttab
+set expandtab
+
+" indents
+set smartindent
+set autoindent
+
+set number
+set nobackup
+
+set clipboard+=unnamed
+
+set lcs=tab:>-,trail:-
+" set nolist
+
+" case
+set ignorecase
+set infercase
+set smartcase
+
+set backspace=indent,eol,start
+
+
+" binds
+" Tidy selected lines (or entire file) with _t:
+nnoremap <silent> = :%!perltidy -q<Enter>
+vnoremap <silent> = :!perltidy -q<Enter>
+set pastetoggle=<F11>
+" comment/uncomment blocks of code (in vmode)
+vmap _c :s/^/#/gi<Enter>
+vmap _C :s/^#//gi<Enter>
+" make tab in v mode ident code
+vmap <tab> >gv
+vmap <s-tab> <gv
+" make tab in normal mode ident code
+nmap <tab> I<tab><esc>
+nmap <s-tab> ^i<bs><esc>
+" simple stuff
+nmap <silent> <c-p> :TlistToggle<CR>
+nmap <silent> <c-n> :NERDTreeToggle<CR>
+
+"tlist stuff
+"let Tlist_Auto_Open = 1
+"let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+
+" perl stuff
+let perl_include_pod = 1
+let perl_extended_vars = 1
+set isk+=:
+
+colorscheme zenburn
