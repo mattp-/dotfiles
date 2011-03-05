@@ -19,9 +19,6 @@
 
 require 'fileutils'
 require 'open-uri'
-require 'openssl'
-
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 def dotfiles *path
   # is this script run from a git repo, use cwd

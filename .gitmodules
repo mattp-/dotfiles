@@ -1,0 +1,54 @@
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/bufexplorer.zip"]
+	path = vim/bundle/bufexplorer.zip
+	url = git://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "vim/bundle/IndexedSearch"]
+	path = vim/bundle/IndexedSearch
+	url = git://github.com/vim-scripts/IndexedSearch.git
+[submodule "vim/bundle/trailing-whitespace"]
+	path = vim/bundle/trailing-whitespace
+	url = git://github.com/bronson/vim-trailing-whitespace.git
+[submodule "vim/bundle/vividchalk"]
+	path = vim/bundle/vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/taglist.vim"]
+	path = vim/bundle/taglist.vim
+	url = git://github.com/vim-scripts/taglist.vim
+[submodule "vim/bundle/Align"]
+	path = vim/bundle/Align
+	url = git://github.com/vim-scripts/Align.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/jQuery"]
+	path = vim/bundle/jQuery
+	url = git://github.com/vim-scripts/jQuery.git
+[submodule "vim/bundle/git"]
+	path = vim/bundle/git
+	url = git://github.com/tpope/vim-git.git
+[submodule "vim/bundle/Zenburn"]
+	path = vim/bundle/Zenburn
+	url = git://github.com/vim-scripts/Zenburn.git
+[submodule "vim/bundle/perl-support.vim"]
+	path = vim/bundle/perl-support.vim
+	url = git://github.com/vim-scripts/perl-support.vim.git
+[submodule "vim/bundle/LustyExplorer"]
+	path = vim/bundle/LustyExplorer
+	url = git://github.com/vim-scripts/LustyExplorer.git
+[submodule "vim/bundle/LustyJuggler"]
+	path = vim/bundle/LustyJuggler
+	url = git://github.com/vim-scripts/LustyJuggler.git
