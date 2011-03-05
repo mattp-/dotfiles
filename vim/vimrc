@@ -84,6 +84,7 @@ set infercase
 set smartcase
 
 set backspace=indent,eol,start
+set hidden
 
 
 " binds
