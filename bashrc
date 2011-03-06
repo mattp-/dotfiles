@@ -59,7 +59,7 @@ function prompt_func() {
         "escher") SHELL_COLOR=$YELLOW ;;
         "bach") SHELL_COLOR=$LIGHT_GREEN ;;
         "dell") SHELL_COLOR=$RED ;;
-        "bacchus") SHELL_COLOR=$LIGHT_BLUE ;;
+        "bacchus") SHELL_COLOR=$BLUE;;
     esac
 
     previous_return_value=$?;
