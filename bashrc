@@ -89,5 +89,5 @@ PATH=/opt/thunderbird:$PATH
 #LANG=C
 LANG=en_US.utf8
 EDITOR=vim
-export "PERL_RL= o=0"         # Use best available ReadLine without ornaments
-
+export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
+xset b off                      # disable annoying audio bell
