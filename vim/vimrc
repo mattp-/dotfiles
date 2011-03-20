@@ -117,3 +117,4 @@ let perl_extended_vars = 1
 set isk+=:
 
 colorscheme zenburn
+set wildignore+=*.o,*.obj,.git,*.png,*.jpg
