@@ -90,6 +90,4 @@ PATH=/opt/thunderbird:$PATH
 LANG=en_US.utf8
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
-if test -e `which xset`; then
-    xset b off                      # disable annoying audio bell
-fi
+[[ `which xset` ]] && xset b off;   # disable annoying audio bell
