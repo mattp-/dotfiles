@@ -118,3 +118,4 @@ set isk+=:
 
 colorscheme zenburn
 set wildignore+=*.o,*.obj,.git,*.png,*.jpg
+set encoding=utf8
