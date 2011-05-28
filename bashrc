@@ -91,3 +91,6 @@ LANG=en_US.utf8
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
 [[ `which xset` ]] && xset b off;   # disable annoying audio bell
+export BROWSER=/usr/bin/firefox
+
+xrdb -merge ~/.Xdefaults
