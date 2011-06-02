@@ -103,8 +103,8 @@ vmap <s-tab> <gv
 nmap <tab> I<tab><esc>
 nmap <s-tab> ^i<bs><esc>
 " simple stuff
-nmap <silent> <c-p> :TlistToggle<CR>
-nmap <silent> <c-n> :NERDTreeToggle<CR>
+nmap <silent> <Leader>p :TlistToggle<CR>
+nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
 "tlist stuff
 "let Tlist_Auto_Open = 1
