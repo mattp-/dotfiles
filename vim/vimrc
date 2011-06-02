@@ -8,7 +8,6 @@ call pathogen#runtime_append_all_bundles()
 
 " Generally Useful:
 " Bundle: git://github.com/scrooloose/nerdtree.git
-" Bundle: git://github.com/vim-scripts/bufexplorer.zip.git
 " # Bundle: git://github.com/bronson/vim-closebuffer.git
 " Bundle: git://github.com/vim-scripts/IndexedSearch.git
 " Bundle: git://github.com/bronson/vim-trailing-whitespace.git
@@ -48,10 +47,11 @@ call pathogen#runtime_append_all_bundles()
 
 " Custom
 " Bundle: git://github.com/vim-scripts/Zenburn.git
-" Bundle: git://github.com/vim-scripts/perl-support.vim.git
+" ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
 " Bundle: git://github.com/vim-scripts/LustyExplorer.git
 " Bundle: git://github.com/vim-scripts/LustyJuggler.git
 " Bundle: git://github.com/wookiehangover/jshint.vim.git
+" ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 
 " Config
 syntax on
@@ -99,12 +99,23 @@ vmap _C :s/^#//gi<Enter>
 " make tab in v mode ident code
 vmap <tab> >gv
 vmap <s-tab> <gv
-" make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
+
 " simple stuff
-nmap <silent> <c-p> :TlistToggle<CR>
-nmap <silent> <c-n> :NERDTreeToggle<CR>
+let mapleader = ","
+map <Leader>t :CommandT<Return>
+map <Leader>a :bprev<Return>
+map <Leader>s :bnext<Return>
+map <Leader>d :bd<Return>
+map <Leader>f :b
+nmap <silent> <Leader>p :TlistToggle<CR>
+nmap <silent> <Leader>n :NERDTreeToggle<CR>
+
+map <Leader>f :LustyFilesystemExplorer<Return>
+map <Leader>r :LustyFilesystemExplorerFromHere<Return>
+map <Leader>b :LustyBufferExplorer<Return>
+map <Leader>j :LustyJuggler<Return>
+map <Leader><tab> :LustyJugglePrevious<Return>
+map <Leader>g :LustyBufferGrep<Return>
 
 "tlist stuff
 "let Tlist_Auto_Open = 1
