@@ -48,7 +48,7 @@ call pathogen#runtime_append_all_bundles()
 
 " Custom
 " Bundle: git://github.com/vim-scripts/Zenburn.git
-" Bundle: git://github.com/vim-scripts/perl-support.vim.git
+" ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
 " Bundle: git://github.com/vim-scripts/LustyExplorer.git
 " Bundle: git://github.com/vim-scripts/LustyJuggler.git
 " Bundle: git://github.com/wookiehangover/jshint.vim.git
@@ -103,8 +103,8 @@ vmap <s-tab> <gv
 nmap <tab> I<tab><esc>
 nmap <s-tab> ^i<bs><esc>
 " simple stuff
-nmap <silent> <c-p> :TlistToggle<CR>
-nmap <silent> <c-n> :NERDTreeToggle<CR>
+nmap <silent> <Leader>p :TlistToggle<CR>
+nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
 "tlist stuff
 "let Tlist_Auto_Open = 1
