@@ -78,6 +78,7 @@ PROMPT_COMMAND=prompt_func
 #eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 #alias gcc='gcc -Wall -Wstrict-prototypes -ansi -pedantic -g'
 alias ls='ls --color'
+vim='screen vim'
 
 set -o vi
 
