@@ -113,6 +113,8 @@ nmap <silent> <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :LustyFilesystemExplorer<Return>
 map <Leader>r :LustyFilesystemExplorerFromHere<Return>
 map <Leader>b :LustyBufferExplorer<Return>
+map <Leader>j :LustyJuggler<Return>
+map <Leader><tab> :LustyJugglePrevious<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
 "tlist stuff
