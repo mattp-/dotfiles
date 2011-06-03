@@ -14,7 +14,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "main", "chat", "irc", "email", "www", "1", "2", "3", "4", "5", "6", "7" };
+static const char *tags[] = { "main", "chat", "irc", "www", "mail", "1", "2", "3", "4", "5", "6", "7" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -74,8 +74,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_a,                      0)
 	TAGKEYS(                        XK_f,                      1)
 	TAGKEYS(                        XK_q,                      2)
-	TAGKEYS(                        XK_e,                      3)
-	TAGKEYS(                        XK_w,                      4)
+	TAGKEYS(                        XK_w,                      3)
+	TAGKEYS(                        XK_e,                      4)
 	TAGKEYS(                        XK_1,                      5)
 	TAGKEYS(                        XK_2,                      6)
 	TAGKEYS(                        XK_3,                      7)
