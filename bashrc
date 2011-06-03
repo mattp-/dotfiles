@@ -85,7 +85,7 @@ set -o vi
 LESS=-r
 AWT_TOOLKIT="MToolkit"
 IPOD_MOUNTPOINT='/mnt/ipod'
-TERM=screen-256color
+TERM=xterm-256color
 PATH=/opt/thunderbird:$PATH
 #LANG=C
 LANG=en_US.utf8
