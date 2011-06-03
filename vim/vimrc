@@ -99,6 +99,12 @@ vmap _C :s/^#//gi<Enter>
 " make tab in v mode ident code
 vmap <tab> >gv
 vmap <s-tab> <gv
+" make tab in normal mode ident code
+nmap <tab> I<tab><esc>
+nmap <s-tab> ^i<bs><esc>
+" make tab in normal mode ident code
+nmap <tab> I<tab><esc>
+nmap <s-tab> ^i<bs><esc>
 
 " simple stuff
 let mapleader = ","
@@ -112,8 +118,8 @@ nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
 map <Leader>f :LustyFilesystemExplorer<Return>
 map <Leader>r :LustyFilesystemExplorerFromHere<Return>
-map <Leader>b :LustyBufferExplorer<Return>
-" map <Leader>j :LustyJuggler<Return>
+"map <Leader>b :LustyBufferExplorer<Return>
+"map <Leader>j :LustyJuggler<Return>
 map <Leader><tab> :LustyJugglePrevious<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
