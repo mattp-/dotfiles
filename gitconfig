@@ -49,7 +49,7 @@ flog = log --stat --abbrev-commit --relative-date --pretty=oneline
 plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 ls = ls-files
 find = !git ls-files | ack
-vim = !sh -c 'vim `git ls-files | ack $0 | head -1`'
+vim = !sh -c 'vim `git ls-files | ack -i $0 | head -1`'
 heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --branch --always --name-only | column -t -s';'"
 st = status
 feature = flow feature
