@@ -121,7 +121,9 @@ map <Leader>f :LustyFilesystemExplorer<Return>
 map <Leader>r :LustyFilesystemExplorerFromHere<Return>
 "map <Leader>b :LustyBufferExplorer<Return>
 "map <Leader>j :LustyJuggler<Return>
-map <Leader><tab> :LustyJugglePrevious<Return>
+map <Leader><tab> :bNext<Return>
+map <Leader><S-tab> :LustyJugglePrevious<Return>
+map <Leader>q :bNext<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
 "tlist stuff

@@ -58,3 +58,6 @@
 [submodule "vim/bundle/minibufexpl.vim"]
 	path = vim/bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/edsono/vim-matchit.git
