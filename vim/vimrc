@@ -43,14 +43,14 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/tsaleh/vim-shoulda.git
 " Bundle: git://github.com/tpope/vim-cucumber.git
 " Bundle: git://github.com/tpope/vim-haml.git
-" Bundle: git://github.com/astashov/vim-ruby-debugger.git
+" # Bundle: git://github.com/astashov/vim-ruby-debugger.git
 
 " Custom
 " Bundle: git://github.com/vim-scripts/Zenburn.git
 " ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
 " Bundle: git://github.com/vim-scripts/LustyExplorer.git
-"!  Bundle: git://github.com/vim-scripts/LustyJuggler.git
-" Bundle: git://github.com/wookiehangover/jshint.vim.git
+" ! Bundle: git://github.com/vim-scripts/LustyJuggler.git
+" ! Bundle: git://github.com/wookiehangover/jshint.vim.git
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
 " Bundle: git://github.com/scrooloose/syntastic.git
