@@ -92,3 +92,7 @@ LANG=en_US.utf8
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
 [[ `which xset` ]] && xset b off;   # disable annoying audio bell
+
+#export PERL5OPT="-MData::Printer"
+#stty ixoff -ixon
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
