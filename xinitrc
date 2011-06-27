@@ -16,4 +16,4 @@ do
 	sleep 1
 done & # run in subshell
 
-exec dwm & stalonetray & nm-applet
+exec dwm & stalonetray & wicd-client

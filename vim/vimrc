@@ -33,17 +33,17 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/tpope/vim-git.git
 " # Bundle: git://github.com/tpope/vim-markdown.git
 " # Bundle: git://github.com/timcharper/textile.vim.git
-" # Bundle: git://github.com/kchmck/vim-coffee-script.git
+" Bundle: git://github.com/kchmck/vim-coffee-script.git
 
 " Ruby/Rails Programming:
-" # Bundle: git://github.com/vim-ruby/vim-ruby.git
-" # Bundle: git://github.com/tpope/vim-rails.git
-" # Bundle: git://github.com/tpope/vim-rake.git
+" Bundle: git://github.com/vim-ruby/vim-ruby.git
+" Bundle: git://github.com/tpope/vim-rails.git
+" Bundle: git://github.com/tpope/vim-rake.git
 " # Bundle: git://github.com/janx/vim-rubytest.git
-" # Bundle: git://github.com/tsaleh/vim-shoulda.git
-" # Bundle: git://github.com/tpope/vim-cucumber.git
-" # Bundle: git://github.com/tpope/vim-haml.git
-" # Bundle: git://github.com/astashov/vim-ruby-debugger.git
+" Bundle: git://github.com/tsaleh/vim-shoulda.git
+" Bundle: git://github.com/tpope/vim-cucumber.git
+" Bundle: git://github.com/tpope/vim-haml.git
+" Bundle: git://github.com/astashov/vim-ruby-debugger.git
 
 " Custom
 " Bundle: git://github.com/vim-scripts/Zenburn.git
@@ -53,6 +53,7 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/wookiehangover/jshint.vim.git
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
+" Bundle: git://github.com/scrooloose/syntastic.git
 
 " Config
 syntax on
@@ -94,18 +95,24 @@ set hidden
 nnoremap <silent> = :%!perltidy -q<Enter>
 vnoremap <silent> = :!perltidy -q<Enter>
 set pastetoggle=<F11>
-" comment/uncomment blocks of code (in vmode)
-vmap _c :s/^/#/gi<Enter>
-vmap _C :s/^#//gi<Enter>
-" make tab in v mode ident code
-vmap <tab> >gv
-vmap <s-tab> <gv
-" make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
-" make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
+
+
+" Indent using tabs (while in visual mode)
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
+vnoremap < <gv
+vnoremap > >gv
+
+" Search only in the selected block (visual mode)
+vnoremap / <esc>/\%V
+
+" Buffer horizontal traversal using C-j and C-k
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Tabs uses c-l and c-h
+map <C-h> <esc>:tabprevious<cr>
+map <C-l> <esc>:tabnext<cr>
 
 " simple stuff
 let mapleader = ","
@@ -140,3 +147,13 @@ colorscheme zenburn
 set wildignore+=*.o,*.obj,.git,*.png,*.jpg
 set encoding=utf8
 set cul
+
+" Syntastic
+set matchpairs=(:),{:},[:],<:>
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_warnings=1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
