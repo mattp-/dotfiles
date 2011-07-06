@@ -28,7 +28,7 @@ call pathogen#runtime_append_all_bundles()
 " # Bundle: git://github.com/tpope/vim-endwise.git
 " Bundle: git://github.com/tpope/vim-repeat.git
 " Bundle: git://github.com/tpope/vim-fugitive.git
-" Bundle: git://github.com/ervandew/supertab.git
+" ! Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/vim-scripts/jQuery.git
 " Bundle: git://github.com/tpope/vim-git.git
 " # Bundle: git://github.com/tpope/vim-markdown.git
@@ -36,13 +36,13 @@ call pathogen#runtime_append_all_bundles()
 " # Bundle: git://github.com/kchmck/vim-coffee-script.git
 
 " Ruby/Rails Programming:
-" # Bundle: git://github.com/vim-ruby/vim-ruby.git
-" # Bundle: git://github.com/tpope/vim-rails.git
-" # Bundle: git://github.com/tpope/vim-rake.git
+" Bundle: git://github.com/vim-ruby/vim-ruby.git
+" Bundle: git://github.com/tpope/vim-rails.git
+" Bundle: git://github.com/tpope/vim-rake.git
 " # Bundle: git://github.com/janx/vim-rubytest.git
-" # Bundle: git://github.com/tsaleh/vim-shoulda.git
-" # Bundle: git://github.com/tpope/vim-cucumber.git
-" # Bundle: git://github.com/tpope/vim-haml.git
+" Bundle: git://github.com/tsaleh/vim-shoulda.git
+" Bundle: git://github.com/tpope/vim-cucumber.git
+" Bundle: git://github.com/tpope/vim-haml.git
 " # Bundle: git://github.com/astashov/vim-ruby-debugger.git
 
 " Custom
@@ -116,6 +116,9 @@ map <Leader>d :bd<Return>
 map <Leader>f :b
 nmap <silent> <Leader>p :TlistToggle<CR>
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>c <Plug>RubyTestRun
+nnoremap <silent> <Leader>C <Plug>RubyFileRun
+nnoremap <silent> <Leader>l <Plug>RubyTestRunLast
 
 map <Leader>f :LustyFilesystemExplorer<Return>
 map <Leader>r :LustyFilesystemExplorerFromHere<Return>
@@ -140,3 +143,12 @@ colorscheme zenburn
 set wildignore+=*.o,*.obj,.git,*.png,*.jpg
 set encoding=utf8
 set cul
+
+" filetypes
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
