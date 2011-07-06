@@ -61,6 +61,9 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
+[submodule "vim/bundle/coffee-script"]
+	path = vim/bundle/coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
@@ -70,9 +73,6 @@
 [submodule "vim/bundle/rake"]
 	path = vim/bundle/rake
 	url = git://github.com/tpope/vim-rake.git
-[submodule "vim/bundle/rubytest"]
-	path = vim/bundle/rubytest
-	url = git://github.com/janx/vim-rubytest.git
 [submodule "vim/bundle/shoulda"]
 	path = vim/bundle/shoulda
 	url = git://github.com/tsaleh/vim-shoulda.git
@@ -85,3 +85,6 @@
 [submodule "vim/bundle/ruby-debugger"]
 	path = vim/bundle/ruby-debugger
 	url = git://github.com/astashov/vim-ruby-debugger.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
