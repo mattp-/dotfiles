@@ -98,10 +98,14 @@ set pastetoggle=<F11>
 
 
 " Indent using tabs (while in visual mode)
-vnoremap <tab> >gv
-vnoremap <s-tab> <gv
 vnoremap < <gv
 vnoremap > >gv
+" make tab in v mode ident code
+vmap <tab> >gv
+vmap <s-tab> <gv
+" make tab in normal mode ident code
+nmap <tab> I<tab><esc>
+nmap <s-tab> ^i<bs><esc>
 
 " Search only in the selected block (visual mode)
 vnoremap / <esc>/\%V
