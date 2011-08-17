@@ -136,7 +136,7 @@ map <Leader>r :LustyFilesystemExplorerFromHere<Return>
 "map <Leader>b :LustyBufferExplorer<Return>
 "map <Leader>j :LustyJuggler<Return>
 map <Leader><tab> :bNext<Return>
-map <Leader><S-tab> :LustyJugglePrevious<Return>
+map <Leader><S-tab> :bprevious<Return>
 map <Leader>q :bNext<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
@@ -170,6 +170,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
+let g:CommandTMatchWindowReverse=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
