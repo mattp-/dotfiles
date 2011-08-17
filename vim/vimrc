@@ -19,13 +19,13 @@ call pathogen#runtime_append_all_bundles()
 " Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 
 " Programming:
-" # Bundle: git://github.com/scrooloose/nerdcommenter.git
-" # Bundle: git://github.com/tpope/vim-surround.git
+" Bundle: git://github.com/scrooloose/nerdcommenter.git
+" Bundle: git://github.com/tpope/vim-surround.git
 " Bundle: git://github.com/vim-scripts/taglist.vim
 " # Bundle: git://github.com/msanders/snipmate.vim.git
 " # Bundle: git://github.com/scrooloose/snipmate-snippets.git
 " Bundle: git://github.com/vim-scripts/Align.git
-" # Bundle: git://github.com/tpope/vim-endwise.git
+" Bundle: git://github.com/tpope/vim-endwise.git
 " Bundle: git://github.com/tpope/vim-repeat.git
 " Bundle: git://github.com/tpope/vim-fugitive.git
 " ! Bundle: git://github.com/ervandew/supertab.git
