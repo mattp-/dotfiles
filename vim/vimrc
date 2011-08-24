@@ -54,7 +54,7 @@ call pathogen#runtime_append_all_bundles()
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
 " Bundle: git://github.com/scrooloose/syntastic.git
-
+" Bundle: git://github.com/majutsushi/tagbar.git
 " Config
 syntax on
 filetype plugin on
