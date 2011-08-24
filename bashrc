@@ -59,7 +59,7 @@ function prompt_func() {
         "escher") SHELL_COLOR=$YELLOW ;;
         "bach") SHELL_COLOR=$LIGHT_GREEN ;;
         "dell") SHELL_COLOR=$RED ;;
-        "bacchus") SHELL_COLOR=$BLUE;;
+        "bacchus") SHELL_COLOR=$BLUE ;;
     esac
 
     previous_return_value=$?;
@@ -91,7 +91,8 @@ PATH=$HOME/local/bin:/opt/thunderbird:$PATH
 LANG=en_US.utf8
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
-[[ `which xset` ]] && xset b off;   # disable annoying audio bell
+#[[ `which xset` ]] && xset b off;   # disable annoying audio bell
+PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 
 #export PERL5OPT="-MData::Printer"
 #stty ixoff -ixon

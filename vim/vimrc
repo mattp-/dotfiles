@@ -19,13 +19,13 @@ call pathogen#runtime_append_all_bundles()
 " Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 
 " Programming:
-" # Bundle: git://github.com/scrooloose/nerdcommenter.git
-" # Bundle: git://github.com/tpope/vim-surround.git
+" Bundle: git://github.com/scrooloose/nerdcommenter.git
+" Bundle: git://github.com/tpope/vim-surround.git
 " Bundle: git://github.com/vim-scripts/taglist.vim
 " # Bundle: git://github.com/msanders/snipmate.vim.git
 " # Bundle: git://github.com/scrooloose/snipmate-snippets.git
 " Bundle: git://github.com/vim-scripts/Align.git
-" # Bundle: git://github.com/tpope/vim-endwise.git
+" Bundle: git://github.com/tpope/vim-endwise.git
 " Bundle: git://github.com/tpope/vim-repeat.git
 " Bundle: git://github.com/tpope/vim-fugitive.git
 " ! Bundle: git://github.com/ervandew/supertab.git
@@ -49,8 +49,8 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/vim-scripts/Zenburn.git
 " ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
 " Bundle: git://github.com/vim-scripts/LustyExplorer.git
-" Bundle: git://github.com/vim-scripts/LustyJuggler.git
-" Bundle: git://github.com/wookiehangover/jshint.vim.git
+" ! Bundle: git://github.com/vim-scripts/LustyJuggler.git
+" ! Bundle: git://github.com/wookiehangover/jshint.vim.git
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
 " Bundle: git://github.com/scrooloose/syntastic.git
@@ -151,7 +151,7 @@ let perl_extended_vars = 1
 set isk+=:
 
 colorscheme zenburn
-set wildignore+=*.o,*.obj,.git,*.png,*.jpg
+set wildignore+=*.o,*.obj,.git,*.png,*.jpg,.*gif
 set encoding=utf8
 set cul
 
