@@ -21,7 +21,7 @@ call pathogen#runtime_append_all_bundles()
 " Programming:
 " Bundle: git://github.com/scrooloose/nerdcommenter.git
 " Bundle: git://github.com/tpope/vim-surround.git
-" Bundle: git://github.com/vim-scripts/taglist.vim
+" # Bundle: git://github.com/vim-scripts/taglist.vim
 " # Bundle: git://github.com/msanders/snipmate.vim.git
 " # Bundle: git://github.com/scrooloose/snipmate-snippets.git
 " Bundle: git://github.com/vim-scripts/Align.git
@@ -49,7 +49,7 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/vim-scripts/Zenburn.git
 " ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
 " Bundle: git://github.com/vim-scripts/LustyExplorer.git
-" ! Bundle: git://github.com/vim-scripts/LustyJuggler.git
+" Bundle: git://github.com/vim-scripts/LustyJuggler.git
 " ! Bundle: git://github.com/wookiehangover/jshint.vim.git
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
@@ -125,7 +125,7 @@ map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 map <Leader>d :bd<Return>
 map <Leader>f :b
-nmap <silent> <Leader>p :TlistToggle<CR>
+nnoremap <silent> <Leader>p :TagbarToggle<CR>
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>c <Plug>RubyTestRun
 nnoremap <silent> <Leader>C <Plug>RubyFileRun
@@ -136,14 +136,14 @@ map <Leader>r :LustyFilesystemExplorerFromHere<Return>
 "map <Leader>b :LustyBufferExplorer<Return>
 "map <Leader>j :LustyJuggler<Return>
 map <Leader><tab> :bNext<Return>
-map <Leader><S-tab> :bprevious<Return>
+map <Leader><S-tab> :LustyJugglePrevious<Return>
 map <Leader>q :bNext<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
 "tlist stuff
 "let Tlist_Auto_Open = 1
 "let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
+"let Tlist_Exit_OnlyWindow = 1
 
 " perl stuff
 let perl_include_pod = 1
