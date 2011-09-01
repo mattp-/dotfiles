@@ -89,6 +89,7 @@ set smartcase
 set backspace=indent,eol,start
 set hidden
 
+autocmd VimEnter * nested TagbarOpen
 
 " binds
 " Tidy selected lines (or entire file) with _t:
