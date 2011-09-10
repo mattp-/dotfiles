@@ -1,3 +1,4 @@
+set t_Co=256
 " default .vimrc installed by vim-update-bundles.
 " Avoid abbreviations!  Spelling everything out makes grepping easy.
 
@@ -173,3 +174,4 @@ let g:CommandTMatchWindowReverse=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
