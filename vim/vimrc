@@ -180,3 +180,10 @@ map <leader>c :CoffeeCompile<CR>
 
 nnoremap j gj
 nnoremap k gk
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+
