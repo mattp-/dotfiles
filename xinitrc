@@ -16,4 +16,4 @@ do
 	sleep 60
 done & # run in subshell
 
-exec dwm & stalonetray & wicd-client
+exec dwm & stalonetray
