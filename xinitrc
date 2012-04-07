@@ -13,7 +13,7 @@ while true
 do
     PROMPT=`$GIT_DIR/laptop.sh`;
 	xsetroot -name "$PROMPT"
-	sleep 1
+	sleep 60
 done & # run in subshell
 
 exec dwm & stalonetray & wicd-client

@@ -78,7 +78,6 @@ PROMPT_COMMAND=prompt_func
 #eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 #alias gcc='gcc -Wall -Wstrict-prototypes -ansi -pedantic -g'
 alias ls='ls --color'
-alias vim='screen vim'
 
 set -o vi
 
@@ -88,12 +87,14 @@ IPOD_MOUNTPOINT='/mnt/ipod'
 TERM=xterm-256color
 PATH=$HOME/local/bin:/opt/thunderbird:$PATH
 #LANG=C
-LANG=en_US.utf8
+LANG=en_US
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
 #[[ `which xset` ]] && xset b off;   # disable annoying audio bell
-PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
+PATH=$HOME/local/bin:$HOME/bin:$HOME/.cabal/bin:$PATH
 
 #export PERL5OPT="-MData::Printer"
 #stty ixoff -ixon
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$HOME/.rbenv/bin:/usr/local/pgsql/bin:$PATH"
+eval "$(rbenv init -)"
+export LD_LIBRARY_PATH='/usr/local/pgsql/lib'
