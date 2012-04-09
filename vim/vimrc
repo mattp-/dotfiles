@@ -22,7 +22,7 @@ call pathogen#runtime_append_all_bundles()
 " Programming:
 " Bundle: git://github.com/scrooloose/nerdcommenter.git
 " Bundle: git://github.com/tpope/vim-surround.git
-" Bundle: git://github.com/vim-scripts/taglist.vim
+" # Bundle: git://github.com/vim-scripts/taglist.vim
 " # Bundle: git://github.com/msanders/snipmate.vim.git
 " # Bundle: git://github.com/scrooloose/snipmate-snippets.git
 " Bundle: git://github.com/vim-scripts/Align.git
@@ -55,7 +55,9 @@ call pathogen#runtime_append_all_bundles()
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
 " Bundle: git://github.com/edsono/vim-matchit.git
 " Bundle: git://github.com/scrooloose/syntastic.git
-" # Bundle: git://github.com/majutsushi/tagbar.git
+" Bundle: git://github.com/majutsushi/tagbar.git
+" Bundle: git://github.com/ciaranm/detectindent.git
+
 " Config
 syntax on
 filetype plugin on
@@ -186,4 +188,9 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+nnoremap <silent> <F9> :TagbarToggle<CR>
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd FileType * nested :call tagbar#autoopen(0)
+autocmd BufEnter * nested :call tagbar#autoopen(0)
 
+set mouse=a
