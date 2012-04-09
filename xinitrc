@@ -1,8 +1,12 @@
 #!/bin/bash
 
+xrdb -merge ~/.Xdefaults
+
+PATH=$HOME/local/bin:$PATH
+
 #xset -b
 #xsetroot -solid "#3F3F3F"
-#xsetroot -solid "#000000"
+xsetroot -solid "#000000"
 #feh --bg-scale dwm/bg.jpg
 
 BASE_DIR=$(dirname $0)
@@ -11,8 +15,7 @@ GIT_DIR=$(dirname $XRC)
 
 while true
 do
-    PROMPT=`$GIT_DIR/laptop.sh`;
-	xsetroot -name "$PROMPT"
+	xsetroot -name "$(date)"
 	sleep 1
 done & # run in subshell
 

@@ -15,6 +15,9 @@ if [ -f /home/`whoami`/perl5/perlbrew/etc/bashrc ]; then
     . /home/`whoami`/perl5/perlbrew/etc/bashrc
 fi
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
@@ -60,6 +63,7 @@ function prompt_func() {
         "bach") SHELL_COLOR=$LIGHT_GREEN ;;
         "dell") SHELL_COLOR=$RED ;;
         "bacchus") SHELL_COLOR=$BLUE ;;
+        "mphillips-pc") SHELL_COLOR=$BLUE ;;
     esac
 
     previous_return_value=$?;
@@ -96,4 +100,3 @@ PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 
 #export PERL5OPT="-MData::Printer"
 #stty ixoff -ixon
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
