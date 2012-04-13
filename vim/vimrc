@@ -125,7 +125,7 @@ let mapleader = ","
 map <Leader>t :CommandT<Return>
 map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
-map <Leader>d :bd<Return>
+map <Leader>d :call Bclose()<Return>
 map <Leader>f :b
 "nnoremap <silent> <Leader>p :TlistToggle<CR>
 nnoremap <silent> <Leader>p :TagbarToggle<CR>
@@ -196,3 +196,24 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 set mouse=a
+
+" Bclose() {{{2
+" delete buffer without closing window
+function! Bclose()
+    let curbufnr = bufnr("%")
+    let altbufnr = bufnr("#")
+
+    if buflisted(altbufnr)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == curbufnr
+        new
+    endif
+
+    if buflisted(curbufnr)
+        execute("bdelete! " . curbufnr)
+    endif
+endfunction
