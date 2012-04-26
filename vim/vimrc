@@ -12,7 +12,7 @@ call pathogen#runtime_append_all_bundles()
 " # Bundle: git://github.com/bronson/vim-closebuffer.git
 " Bundle: git://github.com/vim-scripts/IndexedSearch.git
 " Bundle: git://github.com/bronson/vim-trailing-whitespace.git
-" # Bundle: git://github.com/Raimondi/YAIFA.git
+" Bundle: git://github.com/Raimondi/YAIFA.git
 " Bundle: git://github.com/tpope/vim-vividchalk.git
 "
 " Bundle: git://git.wincent.com/command-t.git
@@ -29,9 +29,9 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/tpope/vim-endwise.git
 " Bundle: git://github.com/tpope/vim-repeat.git
 " Bundle: git://github.com/tpope/vim-fugitive.git
+" Bundle: git://github.com/tpope/vim-git.git
 " ! Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/vim-scripts/jQuery.git
-" Bundle: git://github.com/tpope/vim-git.git
 " # Bundle: git://github.com/tpope/vim-markdown.git
 " # Bundle: git://github.com/timcharper/textile.vim.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
@@ -56,7 +56,6 @@ call pathogen#runtime_append_all_bundles()
 " Bundle: git://github.com/edsono/vim-matchit.git
 " Bundle: git://github.com/scrooloose/syntastic.git
 " Bundle: git://github.com/majutsushi/tagbar.git
-" Bundle: git://github.com/ciaranm/detectindent.git
 
 " Config
 syntax on
@@ -81,8 +80,9 @@ set nobackup
 
 set clipboard+=unnamed
 
+set nolist
+"set list
 set lcs=tab:>-,trail:-
-" set nolist
 
 " case
 set ignorecase
