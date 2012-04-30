@@ -1,44 +1,52 @@
 set t_Co=256
-" default .vimrc installed by vim-update-bundles.
-" Avoid abbreviations!  Spelling everything out makes grepping easy.
 
-" Load plugins using Pathogen. Don't worry if this bit doesn't make sense.
-call pathogen#runtime_append_all_bundles()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" Remove any text (like the '#') before BUNDLE to enable a plugin.
+Bundle 'gmarik/vundle'
 
 " Generally Useful:
-" Bundle: git://github.com/scrooloose/nerdtree.git
-" # Bundle: git://github.com/bronson/vim-closebuffer.git
-" Bundle: git://github.com/vim-scripts/IndexedSearch.git
-" Bundle: git://github.com/bronson/vim-trailing-whitespace.git
-" Bundle: git://github.com/Raimondi/YAIFA.git
-" Bundle: git://github.com/tpope/vim-vividchalk.git
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/IndexedSearch'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'Raimondi/YAIFA'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+Bundle 'edsono/vim-matchit'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/Zenburn'
+Bundle 'tpope/vim-endwise'
+Bundle 'vim-scripts/Align'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'vim-scripts/jQuery'
+Bundle 'tomasr/molokai'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'Shougo/neocomplcache'
+Bundle 'tpope/vim-speeddating'
+Bundle 'c9s/perlomni.vim'
 "
 " Bundle: git://git.wincent.com/command-t.git
 " #   If rvm is installed, make sure we compile command-t with the system ruby
 " Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
+" Bundle 'ervandew/supertab'
 
 " Programming:
-" Bundle: git://github.com/scrooloose/nerdcommenter.git
-" Bundle: git://github.com/tpope/vim-surround.git
 " # Bundle: git://github.com/vim-scripts/taglist.vim
 " # Bundle: git://github.com/msanders/snipmate.vim.git
 " # Bundle: git://github.com/scrooloose/snipmate-snippets.git
-" Bundle: git://github.com/vim-scripts/Align.git
-" Bundle: git://github.com/tpope/vim-endwise.git
-" Bundle: git://github.com/tpope/vim-repeat.git
-" Bundle: git://github.com/tpope/vim-fugitive.git
-" Bundle: git://github.com/tpope/vim-git.git
-" ! Bundle: git://github.com/ervandew/supertab.git
-" Bundle: git://github.com/vim-scripts/jQuery.git
 " # Bundle: git://github.com/tpope/vim-markdown.git
 " # Bundle: git://github.com/timcharper/textile.vim.git
-" Bundle: git://github.com/kchmck/vim-coffee-script.git
+" # Bundle: git://github.com/kchmck/vim-coffee-script.git
 
 " Ruby/Rails Programming:
 " Bundle: git://github.com/vim-ruby/vim-ruby.git
-" Bundle: git://github.com/tpope/vim-rails.git
 " Bundle: git://github.com/tpope/vim-rake.git
 " # Bundle: git://github.com/janx/vim-rubytest.git
 " Bundle: git://github.com/tsaleh/vim-shoulda.git
@@ -47,27 +55,19 @@ call pathogen#runtime_append_all_bundles()
 " # Bundle: git://github.com/astashov/vim-ruby-debugger.git
 
 " Custom
-" Bundle: git://github.com/vim-scripts/Zenburn.git
 " ! Bundle: git://github.com/vim-scripts/perl-support.vim.git
-" Bundle: git://github.com/vim-scripts/LustyExplorer.git
-" Bundle: git://github.com/vim-scripts/LustyJuggler.git
 " ! Bundle: git://github.com/wookiehangover/jshint.vim.git
 " ! Bundle: git://github.com/fholgado/minibufexpl.vim.git
-" Bundle: git://github.com/edsono/vim-matchit.git
-" Bundle: git://github.com/scrooloose/syntastic.git
-" Bundle: git://github.com/majutsushi/tagbar.git
 
 " Config
 syntax on
+filetype on
 filetype plugin on
 set vb
 set incsearch
 set showmatch
 
-" tabs
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+" tabs - defaults loaded by YAIFA
 set smarttab
 set expandtab
 
@@ -122,7 +122,8 @@ map <C-l> <esc>:tabnext<cr>
 
 " simple stuff
 let mapleader = ","
-map <Leader>t :CommandT<Return>
+map <Leader>t :CtrlP<Return>
+map <Leader>b :CtrlPMRU<Return>
 map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 map <Leader>d :call Bclose()<Return>
@@ -133,7 +134,6 @@ nnoremap <silent> <Leader>p :TagbarToggle<CR>
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd BufEnter * nested :call tagbar#autoopen(1)
 autocmd FileType * nested :call tagbar#autoopen(0)
-
 
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>c <Plug>RubyTestRun
@@ -160,18 +160,10 @@ let perl_extended_vars = 1
 set isk+=:
 
 colorscheme zenburn
+" colorscheme molokai
 set wildignore+=*.o,*.obj,.git,*.png,*.jpg,.*gif
 set encoding=utf8
 set cul
-
-" filetypes
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
 
 " Syntastic
 set matchpairs=(:),{:},[:],<:>
@@ -218,3 +210,60 @@ function! Bclose()
     endif
 endfunction
 cabbrev bdelete call Bclose()
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>neocomplcache#undo_completion()
+inoremap <expr><C-l>neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>neocomplcache#smart_close_popup()."\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h>neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>neocomplcache#close_popup()
+inoremap <expr><C-e>neocomplcache#cancel_popup()
+
+" AutoComplPop like behavior.
+"let g:neocomplcache_enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
