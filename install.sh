@@ -8,6 +8,7 @@ ruby vim-update-bundles
 
 ln -sf $SELF_PATH/bashrc ~/.bashrc
 ln -sf $SELF_PATH/screenrc ~/.screenrc
+ln -sf $SELF_PATH/tmux.conf ~/.tmux.conf
 
 rm -rf ~/.vim
 ln -sf $SELF_PATH/vim/vimrc ~/.vimrc
