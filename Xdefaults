@@ -38,8 +38,9 @@
 
 ! dont forget to run xrdb on this file
 
-UXTerm*faceName:               DejaVu Sans Mono
-UXTerm*faceSize:               12
+UXTerm*faceName:               inconsolata
+!UXTerm*faceName:               DejaVu Sans Mono
+UXTerm*faceSize:               11
 UXTerm*background:             Black
 UXTerm*foreground:             White
 UXTerm*saveLines:              8192
@@ -83,11 +84,11 @@ Xterm*termName: xterm-256color
 
 
 ! urxvt
-URxvt*faceName:               DejaVu Sans Mono
-URxvt*faceSize:               10
-URxvt*background:             Black
-URxvt*foreground:             White
-URxvt*saveLines:              8192
+!URxvt*faceName:               DejaVu Sans Mono
+!URxvt*faceSize:               10
+!URxvt*background:             Black
+!URxvt*foreground:             White
+!URxvt*saveLines:              8192
 
 
 ! vim:set ts=2 tw=80 ft=xdefaults:
