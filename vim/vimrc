@@ -31,6 +31,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-speeddating'
 Bundle 'c9s/perlomni.vim'
 Bundle 'ervandew/supertab'
+ Bundle 'sjbach/lusty.git'
 
 " Bundle: git://git.wincent.com/command-t.git
 " #   If rvm is installed, make sure we compile command-t with the system ruby
@@ -63,7 +64,7 @@ set t_Co=256
 set term=screen-256color
 syntax on
 filetype on
-filetype plugin on
+"filetype plugin on
 set vb
 set incsearch
 set showmatch
@@ -177,6 +178,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
+let g:syntastic_mode_map = { 'mode': 'active',
+                            \ 'passive_filetypes': ['perl'] }
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
 
@@ -192,7 +196,7 @@ set mouse=a
 
 " omake from vim!
 "set shell=/bin/bash\ -i
-"map <Leader>o :!omake &<cr>
+map <Leader>o :!/home/mphillips/omake.sh &<cr>
 
 " Bclose() {{{2
 " delete buffer without closing window
@@ -216,6 +220,49 @@ function! Bclose()
 endfunction
 cabbrev bdelete call Bclose()
 
+setlocal iskeyword+=:  " make tags with :: in them useful
+
+if ! exists("s:defined_functions")
+function s:init_tags()
+    perl <<EOF
+        use Perl::Tags;
+        use Perl::Tags::PPI;
+        $naive_tagger = Perl::Tags::PPI->new( max_level=>2 );
+        # only go one level down by default
+EOF
+endfunction
+
+" let vim do the tempfile cleanup and protection
+let s:tagsfile = tempname()
+
+function s:do_tags(filename)
+    perl <<EOF
+        my $filename = VIM::Eval('a:filename');
+
+        use Try::Tiny;
+        try {
+            $naive_tagger->process(files => $filename, refresh=>1 );
+
+            my $tagsfile=VIM::Eval('s:tagsfile');
+            VIM::SetOption("tags+=$tagsfile");
+
+            # of course, it may not even output, for example, if there's nothing new to process
+            $naive_tagger->output( outfile => $tagsfile );
+        };
+EOF
+endfunction
+
+call s:init_tags() " only the first time
+
+let s:defined_functions = 1
+endif
+
+call s:do_tags(expand('%'))
+
+augroup perltags
+au!
+autocmd BufRead,BufWritePost *.pm,*.pl call s:do_tags(expand('%'))
+augroup END
 "" Use neocomplcache.
 "let g:neocomplcache_enable_at_startup = 1
 "" Use smartcase.
