@@ -31,8 +31,8 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-speeddating'
 Bundle 'c9s/perlomni.vim'
 Bundle 'ervandew/supertab'
- Bundle 'sjbach/lusty.git'
-
+Bundle 'sjbach/lusty.git'
+Bundle 'Lokaltog/vim-powerline'
 " Bundle: git://git.wincent.com/command-t.git
 " #   If rvm is installed, make sure we compile command-t with the system ruby
 " Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
@@ -174,10 +174,11 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
 let g:CommandTMatchWindowReverse=1
+set laststatus=2 " Always show the statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{tagbar#currenttag('[%s]','')}
 set statusline+=%*
-
 
 let g:syntastic_mode_map = { 'mode': 'active',
                             \ 'passive_filetypes': ['perl'] }
