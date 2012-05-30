@@ -72,3 +72,4 @@ rt = remote
 ru = remote update
 rp = remote prune
 sm = submodule
+pull = pull -ff-only --rebase
