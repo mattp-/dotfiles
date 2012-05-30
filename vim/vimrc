@@ -33,6 +33,7 @@ Bundle 'c9s/perlomni.vim'
 Bundle 'ervandew/supertab'
 Bundle 'sjbach/lusty.git'
 Bundle 'Lokaltog/vim-powerline'
+
 " Bundle: git://git.wincent.com/command-t.git
 " #   If rvm is installed, make sure we compile command-t with the system ruby
 " Bundle-Command: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
@@ -100,7 +101,6 @@ nnoremap <silent> = :%!perltidy -q<Enter>
 vnoremap <silent> = :!perltidy -q<Enter>
 set pastetoggle=<F11>
 
-
 " Indent using tabs (while in visual mode)
 vnoremap < <gv
 vnoremap > >gv
@@ -151,11 +151,6 @@ map <Leader><S-tab> :LustyJugglePrevious<Return>
 map <Leader>q :bNext<Return>
 map <Leader>g :LustyBufferGrep<Return>
 
-"tlist stuff
-"let Tlist_Auto_Open = 1
-"let Tlist_Show_One_File = 1
-"let Tlist_Exit_OnlyWindow = 1
-
 " perl stuff
 let perl_include_pod = 1
 let perl_extended_vars = 1
@@ -173,18 +168,14 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
-let g:CommandTMatchWindowReverse=1
 set laststatus=2 " Always show the statusline
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%{tagbar#currenttag('[%s]','')}
-set statusline+=%*
 
 let g:syntastic_mode_map = { 'mode': 'active',
                             \ 'passive_filetypes': ['perl'] }
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
 
+" mappings
 nnoremap j gj
 nnoremap k gk
 
@@ -227,8 +218,8 @@ if ! exists("s:defined_functions")
 function s:init_tags()
     perl <<EOF
         use Perl::Tags;
-        use Perl::Tags::PPI;
-        $naive_tagger = Perl::Tags::PPI->new( max_level=>2 );
+        use Perl::Tags::Naive::Lib;
+        $naive_tagger = Perl::Tags::Naive::Lib->new( max_level=>2 );
         # only go one level down by default
 EOF
 endfunction
@@ -264,6 +255,8 @@ augroup perltags
 au!
 autocmd BufRead,BufWritePost *.pm,*.pl call s:do_tags(expand('%'))
 augroup END
+
+
 "" Use neocomplcache.
 "let g:neocomplcache_enable_at_startup = 1
 "" Use smartcase.
