@@ -33,6 +33,15 @@ Bundle 'c9s/perlomni.vim'
 Bundle 'ervandew/supertab'
 Bundle 'sjbach/lusty.git'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'sjl/gundo.vim'
+Bundle 'mileszs/ack.vim'
+
+" splits
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Bundle: git://git.wincent.com/command-t.git
 " #   If rvm is installed, make sure we compile command-t with the system ruby
@@ -95,15 +104,27 @@ set smartcase
 set backspace=indent,eol,start
 set hidden
 
+set relativenumber
+
 " binds
+nnoremap / /\v
+vnoremap / /\v
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " Tidy selected lines (or entire file) with _t:
 nnoremap <silent> = :%!perltidy -q<Enter>
 vnoremap <silent> = :!perltidy -q<Enter>
 set pastetoggle=<F11>
 
 " Indent using tabs (while in visual mode)
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
 " make tab in v mode ident code
 vmap <tab> >gv
 vmap <s-tab> <gv
@@ -183,12 +204,13 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+nnoremap <leader>a :Ack<space>
 
 set mouse=a
 
 " omake from vim!
 "set shell=/bin/bash\ -i
-map <Leader>o :!/home/mphillips/omake.sh &<cr>
+map <Leader>o :!/home/mphillips/local/bin/omake<cr>
 
 " Bclose() {{{2
 " delete buffer without closing window
