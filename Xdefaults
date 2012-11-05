@@ -38,9 +38,9 @@
 
 ! dont forget to run xrdb on this file
 
-UXTerm*faceName:               inconsolata
+UXTerm*faceName:               Inconsolata-dz
 !UXTerm*faceName:               DejaVu Sans Mono
-UXTerm*faceSize:               11
+UXTerm*faceSize:               10
 UXTerm*background:             Black
 UXTerm*foreground:             White
 UXTerm*saveLines:              8192
@@ -51,18 +51,18 @@ UXTerm*saveLines:              8192
 !XTerm*foreground:              White
 !XTerm*saveLines:               8192
 
-Xterm.foreground:              White
-Xterm.background:              Black
+!Xterm.foreground:              White
+!Xterm.background:              Black
 Xterm.scrollBar:               False
 Xterm*utf8: 1
 ! Bind C-0, C-+ and C-= to activate medium, big and small font size respectively.
 !Xterm.font:                    xft:Terminus:pixelsize=15:autohint=true
-!Xterm.font:                    xft:Inconsolata:size=8:autohint=true
-Xterm.keysym.C-0:              command:\033]710;xft:Terminus:pixelsize=15:autohint=true\007
-Xterm.keysym.C-minus:          command:\033]710;xft:Terminus:pixelsize=12:autohint=true\007
-Xterm.keysym.C-underscore:     command:\033]710;xft:DejaVu Sans Mono:pixelsize=17,xft:Bitstream Vera Sans Mono:autohint=true\007
-Xterm.keysym.C-equal:          command:\033]710;xft:DejaVu Sans Mono:pixelsize=20,xft:Bitstream Vera Sans Mono:autohint=true\007
-Xterm.keysym.C-plus:           command:\033]710;xft:DejaVu Sans Mono:pixelsize=24,xft:Bitstream Vera Sans Mono:autohint=true\007
+Xterm.font:                    xft:Inconsolata:size=8:autohint=true
+!Xterm.keysym.C-0:              command:\033]710;xft:Terminus:pixelsize=15:autohint=true\007
+!Xterm.keysym.C-minus:          command:\033]710;xft:Terminus:pixelsize=12:autohint=true\007
+!Xterm.keysym.C-underscore:     command:\033]710;xft:DejaVu Sans Mono:pixelsize=17,xft:Bitstream Vera Sans Mono:autohint=true\007
+!Xterm.keysym.C-equal:          command:\033]710;xft:DejaVu Sans Mono:pixelsize=20,xft:Bitstream Vera Sans Mono:autohint=true\007
+!Xterm.keysym.C-plus:           command:\033]710;xft:DejaVu Sans Mono:pixelsize=24,xft:Bitstream Vera Sans Mono:autohint=true\007
 
 ! Xterm.perl-ext-common:         default,matcher,tabbed
 Xterm.perl-ext-common:         default,matcher
@@ -89,6 +89,4 @@ Xterm*termName: xterm-256color
 !URxvt*background:             Black
 !URxvt*foreground:             White
 !URxvt*saveLines:              8192
-
-
 ! vim:set ts=2 tw=80 ft=xdefaults:

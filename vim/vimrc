@@ -35,6 +35,8 @@ Bundle 'sjbach/lusty.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " splits
 nnoremap <leader>w <C-w>v<C-w>l
@@ -115,7 +117,7 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 set list
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 
 " Tidy selected lines (or entire file) with _t:
 nnoremap <silent> = :%!perltidy -q<Enter>
@@ -179,6 +181,7 @@ set isk+=:
 
 colorscheme zenburn
 " colorscheme molokai
+hi ColorColumn ctermbg=darkgrey
 set wildignore+=*.o,*.obj,.git,*.png,*.jpg,.*gif
 set encoding=utf8
 set cul
@@ -205,7 +208,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <leader>a :Ack<space>
-
+nnoremap <leader>w <C-w>v<C-w>l
 set mouse=a
 
 " omake from vim!

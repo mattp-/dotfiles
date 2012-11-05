@@ -73,3 +73,5 @@ ru = remote update
 rp = remote prune
 sm = submodule
 pu  = pull --ff-only --rebase
+[github]
+	user = mattp-
