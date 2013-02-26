@@ -34,6 +34,9 @@ added = yellow
 changed = green
 untracked = cyan
 
+[remote "origin"]
+fetch=+refs/pull/*/head:refs/remotes/pull-request/*
+
 [branch "develop"]
 remote = origin
 merge = develop
@@ -47,6 +50,9 @@ prompt = false
 slog = log --pretty=format:\"%h %s\" --graph
 flog = log --stat --abbrev-commit --relative-date --pretty=oneline
 plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+sdiff = diff --pretty=format:\"%h %s\" --graph
+fdiff = diff --stat --abbrev-commit --relative-date --pretty=oneline
+pdiff = diff --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 ls = ls-files
 find = !git ls-files | ack
 vim = !sh -c 'vim `git ls-files | ack -i $0 | head -1`'
