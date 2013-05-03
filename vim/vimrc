@@ -119,8 +119,7 @@ map <C-l> <esc>:tabnext<cr>
 
 " simple stuff
 let mapleader = ","
-"map <Leader>t :CtrlP<Return>
-"let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<c-p>'
 map <Leader>b :CtrlPMRU<Return>
 map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
