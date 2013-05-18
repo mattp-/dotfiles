@@ -4,8 +4,6 @@ SELF_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 
 echo $SELF_PATH
 
-ruby vim-update-bundles
-
 ln -sf $SELF_PATH/bashrc ~/.bashrc
 ln -sf $SELF_PATH/screenrc ~/.screenrc
 ln -sf $SELF_PATH/tmux.conf ~/.tmux.conf
