@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/projects/Role-REST-Client/lib/Role/REST/Client'
+let g:netrw_dirhist_2='/projects/whitelabel-user-pages/views'
+let g:netrw_dirhist_3='/projects/Role-REST-Client/lib/Role/REST/Client'
+let g:netrw_dirhist_4='/home/mphillips/.local'
+let g:netrw_dirhist_5='/home/mphillips/test'
+let g:netrw_dirhist_6='/projects/whitelabel-admin-pages/lib/perl5'
+let g:netrw_dirhist_7='/projects/whitelabel-oanda-admin-pages/src/cgi-bin/torrid'
+let g:netrw_dirhist_8='/projects/DBIx-Class/lib/DBIx/Class/ResultSet'
