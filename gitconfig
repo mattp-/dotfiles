@@ -1,7 +1,7 @@
 [core]
 editor = vim
 #autocrlf = true
-excludesfile = ~/.gitignore
+	excludesfile = /home/mphillips/.gitignore_global
 whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [user]
@@ -10,7 +10,7 @@ name = Matt Phillips
 email = mphillips@oanda.com
 
 [branch]
-autosetupmerge = true
+autosetuprebase = always
 
 [color]
 ui = auto
@@ -55,7 +55,7 @@ sdiff = diff --pretty=format:\"%h %s\" --graph
 fdiff = diff --stat --abbrev-commit --relative-date --pretty=oneline
 pdiff = diff --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 ls = ls-files
-find = !git ls-files | ack
+find = !git ls-files |ag
 vim = !sh -c 'vim `git ls-files | ack -i $0 | head -1`'
 heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --branch --always --name-only | column -t -s';'"
 feature = flow feature
@@ -81,6 +81,9 @@ rp = remote prune
 sm = submodule
 pu  = pull --ff-only --rebase
 [github]
-user = mattp-
+	user = mattp-
+	password = Sib*mun1
 [push]
 default = simple
+[init]
+	templatedir = /home/mphillips/projects/perl-git-hooks

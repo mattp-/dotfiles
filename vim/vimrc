@@ -31,22 +31,13 @@ Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-speeddating'
-Bundle 'ervandew/supertab'
-Bundle 'sjbach/lusty.git'
+"Bundle 'sjbach/lusty.git'
 Bundle 'sjl/gundo.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 "let g:EasyMotion_leader_key = '<Leader>'
-
-" splits
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " Config
 set t_Co=256
 set term=screen-256color
@@ -104,11 +95,11 @@ set pastetoggle=<F11>
 "vnoremap < <gv
 "vnoremap > >gv
 " make tab in v mode ident code
-vmap <tab> >gv
-vmap <s-tab> <gv
+"vmap <tab> >gv
+"vmap <s-tab> <gv
 " make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
+"nmap <tab> I<tab><esc>
+"nmap <s-tab> ^i<bs><esc>
 
 " Search only in the selected block (visual mode)
 vnoremap / <esc>/\%V
@@ -207,6 +198,7 @@ setlocal iskeyword+=:  " make tags with :: in them useful
 if ! exists("s:defined_functions")
 function s:init_tags()
     perl <<EOF
+        use Cwd;
         use Perl::Tags;
         use Perl::Tags::Naive::Lib;
         $naive_tagger = Perl::Tags::Naive::Lib->new( max_level=>2 );
@@ -250,3 +242,20 @@ augroup END
 "set fdm=indent
 map <Leader>a za
 map <Leader>A zA
+
+" splits
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" buffers - rewrites above splits
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
+
+set directory=~/.backup
+set backupdir=~/.backup
+set undodir=~/.backup

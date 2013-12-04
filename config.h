@@ -1,31 +1,32 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "terminusbold:pixelsize=14";
-static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#cccccc";
-static const char normfgcolor[]     = "#000000";
-static const char selbordercolor[]  = "#0066ff";
-static const char selbgcolor[]      = "#0066ff";
-static const char selfgcolor[]      = "#ffffff";
+static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+static const char normbordercolor[] = "#444444";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selbordercolor[]  = "#005577";
+static const char selbgcolor[]      = "#005577";
+static const char selfgcolor[]      = "#eeeeee";
+
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "main", "chat", "irc", "www", "mail", "1", "2", "3", "4", "5", "6", "7" };
+static const char *tags[] = { "main", "talk", "www", "mail", "cal", "1", "2", "3", "4", "5", "6", "7" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,       True,        -1 },
-	{ "Firefox",  NULL,       NULL,       0,       False,       -1 },
+        { "Gimp",     NULL,       NULL,       0,            True,        -1 },
+        { "Firefox",  NULL,       NULL,       0,            False,       -1 },
 };
 
 /* layout(s) */
+static const int nmaster      = 1;    /* number of clients in master area */
+static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster      = 1;
-static const Bool resizehints = True; /* False means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -51,6 +52,9 @@ static const char *termcmd[]  = { "/usr/bin/terminal" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_o,      incnmaster,     {.i = 0 } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -62,7 +66,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -74,9 +78,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_a,                      0)
 	TAGKEYS(                        XK_f,                      1)
-	TAGKEYS(                        XK_q,                      2)
-	TAGKEYS(                        XK_w,                      3)
-	TAGKEYS(                        XK_e,                      4)
+	TAGKEYS(                        XK_q,                      3)
+	TAGKEYS(                        XK_w,                      2)
+	TAGKEYS(                        XK_e,                      3)
+	TAGKEYS(                        XK_r,                      4)
 	TAGKEYS(                        XK_1,                      5)
 	TAGKEYS(                        XK_2,                      6)
 	TAGKEYS(                        XK_3,                      7)
