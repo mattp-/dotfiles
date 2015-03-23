@@ -15,9 +15,6 @@ if [ -f /home/`whoami`/perl5/perlbrew/etc/bashrc ]; then
     . /home/`whoami`/perl5/perlbrew/etc/bashrc
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
