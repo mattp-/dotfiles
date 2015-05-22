@@ -16,4 +16,3 @@ ln -sf $SELF_PATH/gitconfig ~/.gitconfig
 
 ln -sf $SELF_PATH/xinitrc ~/.xinitrc
 ln -sf $SELF_PATH/Xdefaults ~/.Xdefaults
-ln -sf $SELF_PATH/gtkrc-2.0 ~/.gtkrc-2.0

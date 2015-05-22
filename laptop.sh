@@ -2,13 +2,16 @@
 OUTPUT=""
 WLANDEV='wlan0'
 ESSID=`/sbin/iwconfig $WLANDEV | grep ESSID | sed -e 's/.*ESSID:\"//; s/\".*$//'`
-SIGQUAL=`cat /sys/class/net/$WLANDEV/wireless/link`
-OUTPUT="[$OUTPUT $ESSID:$SIGQUAL% ]  ["
+SIGQUAL=`cat /proc/net/wireless | perl -ne 'next unless /^\s*wlan.*?\s+\d+\s+(\d+)/; print $1'`
+OUTPUT="$TEST [$OUTPUT $ESSID:$SIGQUAL% ]  ["
 PWRDIR=/sys/class/power_supply
 for i in `ls --indicator-style=none -1 $PWRDIR \
           | grep BAT \
           | sed -e 's/BAT//'`;
 do
+  if [ "$i" != 0 ]; then
+    OUTPUT="$OUTPUT |"
+  fi
   THISBATT="$PWRDIR/BAT$i"
   CAP=`cat $THISBATT/energy_full`
   CUR=`cat $THISBATT/energy_now`
@@ -30,7 +33,7 @@ do
   elif [ "$STS" = "Unknown" ]; then
     OUTPUT="$OUTPUT $PRC%"
   fi
-  OUTPUT="$OUTPUT ]"
 done
+OUTPUT="$OUTPUT ]"
 CLOCK=`date +"%a %d %b %l:%M:%S %P"`
 echo $OUTPUT $CLOCK

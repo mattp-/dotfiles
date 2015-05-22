@@ -40,7 +40,7 @@
 
 UXTerm*faceName:               Inconsolata-dz
 !UXTerm*faceName:               DejaVu Sans Mono
-UXTerm*faceSize:               10
+UXTerm*faceSize:               12
 UXTerm*background:             Black
 UXTerm*foreground:             White
 UXTerm*saveLines:              8192

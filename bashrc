@@ -86,13 +86,11 @@ LESS=-r
 AWT_TOOLKIT="MToolkit"
 IPOD_MOUNTPOINT='/mnt/ipod'
 TERM=xterm-256color
-PATH=$HOME/local/bin:/opt/thunderbird:$PATH
 #LANG=C
 LANG=en_US
 EDITOR=vim
 export "PERL_RL= o=0"           # Use best available ReadLine without ornaments
 #[[ `which xset` ]] && xset b off;   # disable annoying audio bell
-PATH=$HOME/local/bin:$HOME/bin:$HOME/.cabal/bin:$PATH
 
 #export PERL5OPT="-MData::Printer"
 #stty ixoff -ixon
